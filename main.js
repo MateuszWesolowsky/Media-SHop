@@ -76,6 +76,37 @@ const createCategories = (kategory) => {
 
 createCategories(renderCategories(currentProducts));
 
+const activeCategoriesButtons = function () {
+	categoriesButtons.forEach((btn) => btn.classList.remove("active"));
+	this.classList.add("active");
+};
+
+const categoriesButtons = [
+	...document.querySelectorAll(".categories-items button"),
+];
+categoriesButtons.forEach((btn) =>
+	btn.addEventListener("click", activeCategoriesButtons)
+);
+
+const category = renderCategories(currentProducts);
+
+document
+	.querySelector(".categories-items")
+	.addEventListener("click", (event) => {
+		let categoryBtn = event.target.textContent;
+		if (event.target.tagName === "BUTTON") {
+			const categoryItems = currentProducts.filter((item) => {
+				if (categoryBtn.toLowerCase() === item.category) return item;
+				else {
+					return renderProduct(currentProducts);
+				}
+			});
+			console.log(categoryItems);
+			return renderProduct(categoryItems);
+		}
+	});
+// filterCategory(renderCategories(currentProducts));
+
 // const renderCategories = function () {
 // 	const categories = currentProducts
 // 		.map((item) => item.category.split())
