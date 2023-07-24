@@ -28,6 +28,8 @@ header {
 .header-title {
   display: flex;
   align-items: center;
+  font-size: 1.2em;
+  margin-right: 15px;
 }
 
 .header-title span:first-child {
@@ -49,6 +51,7 @@ header {
   display: flex;
   align-items: center;
   margin-left: 80px;
+  display: none;
 }
 .search-bar-input {
   min-width: 400px;
@@ -247,8 +250,14 @@ header {
   .container {
     display: flex;
   }
+  .header-title {
+    font-size: 2em;
+  }
   .categories-items {
     flex-direction: column;
+  }
+  .search-bar {
+    display: flex;
   }
   .categories {
     margin: 0px;
